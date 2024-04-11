@@ -1,14 +1,48 @@
+
+<style>
+  body, html{
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .caja {
+    position: absolute;
+    top: 2%;
+    transform: translateX(-50%,-50%);
+    width: 60%;
+    max-width: 400px;
+    z-index: 10;
+    
+  }
+
+  .service {
+    text-align: center;
+  }
+
+  .service img {
+    margin-top: -50px;
+    width: 160px;
+    height: 160px
+  }
+
+</style>
+
 {% include ('cabecera.html') %}
+
+{% include ('Body.html') %}
 
 <div class="caja">
     <form class="form-control" action="crear-registro" method="post">
-
+      <div class="service">
+        <img src="{{ url_for('static', filename='img/mates.png') }}" alt="">
+      </div>
       <h1 class="text-center t">Registro</h1>
 
       <div class="form-group">
         <label for="exampleInputEmail1">Correo</label>
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo" name="txtCorreo">
-      </div>
+      </div><br>
       <div class="form-group">
         <label for="exampleInputPassword1">Contraseña</label>
         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" name="txtPassword">
