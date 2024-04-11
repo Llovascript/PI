@@ -16,9 +16,10 @@ mysql = MySQL(app)
 def home():
     return render_template('index.html')
 
-@app.route('/User')
+@app.route('/user')
 def admin():
     return render_template('InicioUsuario.html')
+
 
 @app.route('/acceso-login', methods=["GET", "POST"])
 def login():
@@ -73,9 +74,16 @@ def listar():
 
 #-------------------------------
 
+@app.route('/perfil')
+def perfil():
+    return render_template('PerfilUsu.html')
+
 
 if __name__ == '__main__':
     app.secret_key = "llovascript"
     app.run(debug=True, host='0.0.0.0', port=5000, threaded=True)
+    
+    
+
     
 #hola joto
