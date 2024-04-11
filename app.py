@@ -16,9 +16,9 @@ mysql = MySQL(app)
 def home():
     return render_template('index.html')
 
-@app.route('/admin')
+@app.route('/User')
 def admin():
-    return render_template('admin.html')
+    return render_template('InicioUsuario.html')
 
 @app.route('/acceso-login', methods=["GET", "POST"])
 def login():
@@ -39,7 +39,7 @@ def login():
             if session['id_rol'] == 1:
                 return render_template("admin2.html")
             elif session['id_rol'] == 2:
-                return render_template("admin.html")
+                return render_template("InicioUsuario.html")
         else:
             return render_template('index.html', mensaje="Correo o Contaseña incorrecta")
         
