@@ -16,6 +16,10 @@ mysql = MySQL(app)
 def home():
     return render_template('index.html')
 
+@app.post('/perfil')
+def perfil():
+    return render_template('PerfilUsu.html')
+
 @app.route('/user')
 def admin():
     return render_template('InicioUsuario.html')
@@ -73,10 +77,6 @@ def listar():
     return render_template('listar_usuarios.html', usuarios=usuarios)
 
 #-------------------------------
-
-@app.route('/perfil')
-def perfil():
-    return render_template('PerfilUsu.html')
 
 
 if __name__ == '__main__':
